@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ntlm-theft"
+version = "1.0.0"
+description = "Generates 21 different types of hash theft documents for NTLMv2 hash capture"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+authors = [{ name = "Jacob Wilkin" }]
+dependencies = ["xlsxwriter"]
+
+[project.urls]
+Homepage = "https://github.com/Greenwolf/ntlm_theft"
+
+[project.scripts]
+ntlm_theft = "ntlm_theft.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ntlm_theft*"]
+
+[tool.setuptools.package-data]
+ntlm_theft = ["templates/**/*"]
