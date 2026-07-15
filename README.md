@@ -49,10 +49,10 @@ These instructions will show you the requirements for and how to use ntlm_theft.
 ntlm_theft requires Python3. Install it with [pipx](https://pipx.pypa.io/) (pulls in the `xlsxwriter` dependency automatically):
 
 ```
-pipx install .
+pipx install git+https://github.com/michiiii/ntlm_theft
 ```
 
-This installs an `ntlm_theft` command on your `PATH`. If you're actively developing the tool, use an editable install instead so code changes take effect without reinstalling:
+This installs an `ntlm_theft` command on your `PATH`. If you're actively developing the tool, clone the repo and use an editable install instead so code changes take effect without reinstalling:
 
 ```
 pipx install --editable .
